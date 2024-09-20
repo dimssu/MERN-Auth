@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
-import "./signup.css";
+import "./login.css";
 import { handleError, handleSuccess } from "../../utils";
 
 const Login = () => {
@@ -38,8 +38,10 @@ const Login = () => {
       const { success, message, jwtToken, name, error } = result;
       if(success) {
         handleSuccess(message);
+        localStorage.setItem("jwtToken", jwtToken);
+        localStorage.setItem("loggedInUser", name);
         setTimeout(() => {
-          navigate('/login');
+          navigate('/home');
         }, 1000);
       }else if(error){
         const details = error?.details[0]?.message;
@@ -54,7 +56,7 @@ const Login = () => {
 
   return (
     <div className="container">
-      <h1>Sign Up</h1>
+      <h1>Login</h1>
       <form onSubmit={handleLogin}>
         <div>
           <label htmlFor="email">Email</label>
