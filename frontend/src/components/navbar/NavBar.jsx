@@ -19,7 +19,7 @@ const NavBar = () => {
     handleSuccess("Logged out successfully");
     setTimeout(() => {
       navigate("/login");
-    }, 1000);
+    }, 400);
   };
 
   return (
