@@ -1,0 +1,19 @@
+.main-layout {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .navbar-layout {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    height: 60px; 
+  }
+  
+  main {
+    margin-top: 20px; 
+    padding: 20px; 
+  }
+  
